@@ -10,8 +10,9 @@ jobs:
     timeout-minutes: 10
     if: contains(github.ref, 'develop')
     steps:
-      - name: fetch
-        run: git clone --filter=tree:0 git@github.com:${{ github.repository }}
+      - uses: actions/checkout@v3
+        with:
+          ref: develop
       - name: Set up Ruby 2.7
         uses: ruby/setup-ruby@v1
         with:
