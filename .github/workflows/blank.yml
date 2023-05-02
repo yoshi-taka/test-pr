@@ -15,7 +15,7 @@ jobs:
           ref: develop
           fetch-depth: 0
       - name: fetch
-        run: git fetch origin staging:origin/staging
+        run: git fetch origin staging:origin/staging --depth=0
       - name: Set up Ruby 2.7
         uses: ruby/setup-ruby@v1
         with:
